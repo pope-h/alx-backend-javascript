@@ -12,7 +12,12 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  const filteredSet = [...set].filter((value) => value.startsWith(startString));
+  const resultArray = [];
+  for (const value of set) {
+    if (value.startsWith(startString)) {
+      resultArray.push(value.slice(startString.length));
+    }
+  }
 
-  return filteredSet.join('-');
+  return resultArray.join('-');
 }
