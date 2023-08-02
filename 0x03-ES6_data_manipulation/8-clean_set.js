@@ -15,7 +15,11 @@ export default function cleanSet(set, startString) {
   const resultArray = [];
   for (const value of set) {
     if (value.startsWith(startString)) {
-      resultArray.push(value.slice(startString.length));
+      const valueSubStr = value.substring(startString.length);
+
+      if (valueSubStr && valueSubStr !== value) {
+        resultArray.push(valueSubStr);
+      }
     }
   }
 
