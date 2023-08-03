@@ -6,22 +6,19 @@
  * of each item in the set.
  * @returns {String}
  */
-
 export default function cleanSet(set, startString) {
-  if (startString === '') {
+  const parts = [];
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
     return '';
   }
-
-  const resultArray = [];
-  for (const value of set) {
-    if (value.startsWith(startString)) {
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
       const valueSubStr = value.substring(startString.length);
 
       if (valueSubStr && valueSubStr !== value) {
-        resultArray.push(valueSubStr);
+        parts.push(valueSubStr);
       }
     }
   }
-
-  return resultArray.join('-');
+  return parts.join('-');
 }
