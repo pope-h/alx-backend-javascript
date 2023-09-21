@@ -33,10 +33,12 @@ function countStudents(path) {
       });
 
       const result = [];
+      console.log(`Number of students: ${students.length}`);
       result.push(`Number of students: ${students.length}`);
 
       for (const field in fieldCounts) {
         if (Object.prototype.hasOwnProperty.call(fieldCounts, field)) {
+          console.log(`Number of students in ${field}: ${fieldCounts[field].length}. List: ${fieldCounts[field].join(', ')}`);
           result.push(`Number of students in ${field}: ${fieldCounts[field].length}. List: ${fieldCounts[field].join(', ')}`);
         }
       }
@@ -47,7 +49,3 @@ function countStudents(path) {
 }
 
 module.exports = countStudents;
-
-countStudents('database.csv')
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error.message));
