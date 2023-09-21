@@ -49,5 +49,5 @@ function countStudents(path) {
 module.exports = countStudents;
 
 countStudents('database.csv')
-  .then(result => console.log(result))
-  .catch(error => console.error(error.message));
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error.message));
