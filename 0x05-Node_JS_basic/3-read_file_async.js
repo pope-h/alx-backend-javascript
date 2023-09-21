@@ -42,9 +42,12 @@ function countStudents(path) {
       }
 
       resolve(result.join('\n'));
-      console.log(result);
     });
   });
 }
 
 module.exports = countStudents;
+
+countStudents('database.csv')
+  .then(result => console.log(result))
+  .catch(error => console.error(error.message));
