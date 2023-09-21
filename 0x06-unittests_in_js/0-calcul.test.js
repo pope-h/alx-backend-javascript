@@ -15,7 +15,7 @@ describe('calculateNumber', function() {
     assert.equal(result, 8);
   });
   it('tests the sum of two floats', function() {
-    const result = calculateNumber(0.7, 4.9);
+    const result = calculateNumber(1.5, 3.7);
     assert.equal(result, 6);
   });
   it('tests the sum of positive and negative number', function() {
