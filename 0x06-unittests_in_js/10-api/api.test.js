@@ -53,8 +53,10 @@ describe('Basic Integration testing', function() {
     );
 
     request.get(`${URL}/available_payments`, (_err, res, body) => {
+      const parsedBody = JSON.parse(body);
+
       expect(res.statusCode).to.be.eq(200);
-      expect(body).to.be.deep.equal(payload);
+      expect(parsedBody).to.be.deep.equal(payload);
       done();
     });
   });
